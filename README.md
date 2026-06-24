@@ -19,6 +19,19 @@ uvicorn app.main:app --reload --port 8000
 | GET    | `/tarefas/{id}`   | Busca tarefa por ID (404 se não existe) |
 | PUT    | `/tarefas/{id}`   | Atualiza tarefa por ID (404 se não existe) |
 
+## Exemplos de uso
+
+```bash
+# Criar tarefa
+curl -X POST http://localhost:8000/tarefas -H "Content-Type: application/json" -d '{"titulo":"Estudar APIs"}'
+
+# Listar tarefas
+curl http://localhost:8000/tarefas
+
+# Atualizar tarefa
+curl -X PUT http://localhost:8000/tarefas/1 -H "Content-Type: application/json" -d '{"titulo":"Estudar APIs","concluida":true}'
+```
+
 ## Contrato
 
 **POST /tarefas**
